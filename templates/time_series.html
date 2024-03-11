@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Time Series Analysis - DeFi Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Time Series Analysis</h1>
+
+        <!-- Price Over Time -->
+        <section>
+            <h2>Price Over Time</h2>
+            <img src="{{ price_plot }}" alt="Price Over Time Plot">
+        </section>
+
+        <!-- Volume Over Time -->
+        <section>
+            <h2>Volume Over Time</h2>
+            <img src="{{ volume_plot }}" alt="Volume Over Time Plot">
+        </section>
+
+        <!-- Predictive Trends (if applicable) -->
+        <section>
+            <h2>Predictive Price Trends</h2>
+            <img src="{{ predictions_plot }}" alt="Predictive Price Trends Plot">
+        </section>
+
+        <!-- Link back to Home -->
+        <section>
+            <a href="/" class="btn btn-primary mt-3">Back to Dashboard</a>
+        </section>
+
+    </div>
+</body>
+</html>

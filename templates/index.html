@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DeFi Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script>
+        function updatePricePlot(token) {
+            fetch('/price_plot?token=uniswap')
+            .then(response => response.blob())
+            .then(imageBlob => {
+                // Assuming there's an <img> element with id 'price-plot' in your HTML
+                const imageObjectURL = URL.createObjectURL(imageBlob);
+                document.getElementById('price_plot_container').src = imageObjectURL;
+            })
+            .catch(error => console.error('Error fetching price plot:', error));
+        
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">DeFi Dashboard</h1>
+
+        <!-- Token Information -->
+        <section id="token_information">
+            <h2>Token Information</h2>
+            <details>
+                <summary>Uniswap</summary>
+                <p>Uniswap is a decentralized finance protocol used for exchanging cryptocurrencies without the need for a central exchange.</p>
+            </details>
+            <!-- Add more tokens here -->
+        </section>
+
+        <!-- Market Insights -->
+        <section id="market_insights">
+            <h2>Market Insights</h2>
+            <p>DeFi is rapidly evolving, with total value locked (TVL) reaching new highs. The surge in interest for decentralized exchanges like Uniswap has been unprecedented.</p>
+        </section>
+
+        <!-- Price Plot -->
+        <section id="price_plot_section">
+            <h2>Price Plot</h2>
+            <div id="price_plot_container">
+                <!-- Price plot will be updated here -->
+            </div>
+        </section>
+
+        <!-- Update Price Plot Button -->
+        <section>
+            <button onclick="updatePricePlot('uniswap')" class="btn btn-primary">Update Uniswap Price Plot</button>
+            <!-- Add buttons for other tokens as needed -->
+        </section>
+
+        <!-- Disclaimer -->
+        <footer class="mt-5">
+            <p class="text-muted">Disclaimer: The information provided by this dashboard is for educational purposes only and is not intended as financial advice.</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contract Analysis - DeFi Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Smart Contract Analysis</h1>
+
+        <!-- Most Active Contracts -->
+        <section>
+            <h2>Most Active Contracts</h2>
+            <ul>
+                <!-- Loop through your contracts data -->
+                <li>Contract Address: {{ contract.address }} - Transactions: {{ contract.transactions_count }}</li>
+                <!-- Repeat for each contract -->
+            </ul>
+        </section>
+
+        <!-- Gas Usage Over Time -->
+        <section>
+            <h2>Gas Usage Over Time</h2>
+            <img src="{{ gas_usage_plot }}" alt="Gas Usage Over Time Plot">
+        </section>
+
+        <!-- Link back to Home -->
+        <section>
+            <a href="/" class="btn btn-primary mt-3">Back to Dashboard</a>
+        </section>
+
+    </div>
+</body>
+</html>
